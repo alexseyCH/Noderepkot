@@ -36,11 +36,11 @@ print_header() {
     if [ "$LANGUAGE" = "en" ]; then
         echo -e "${CYAN}Project: https://github.com/alexseyCH/Noderepkot${RESET}"
         echo -e "${YELLOW}Contacts: @mishkaSao${RESET}"
-        echo -e "${CYAN}Version: 2.5${RESET}"
+        echo -e "${CYAN}Version: 1.5${RESET}"
     else
         echo -e "${CYAN}Проект: https://github.com/alexseyCH/Noderepkot${RESET}"
         echo -e "${YELLOW}Контакты: @mishkaSao${RESET}"
-        echo -e "${CYAN}Версия: 2.5${RESET}"
+        echo -e "${CYAN}Версия: 1.5${RESET}"
     fi
     echo -e "${MAGENTA}────────────────────────────────────────────────────────────${RESET}"
     echo
