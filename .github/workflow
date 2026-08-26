@@ -1,0 +1,35 @@
+name: Unzip ZIP to root
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract ZIP
+        run: |
+          mkdir /tmp/project
+          unzip -o "Noderepkot-main.zip" -d /tmp/project
+
+          if [ -d "/tmp/project/Noderepkot-main" ]; then
+            cp -a /tmp/project/Noderepkot-main/. .
+          else
+            cp -a /tmp/project/. .
+          fi
+
+          rm -f "Noderepkot-main.zip"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Extract Noderepkot-main.zip"
+          git push
